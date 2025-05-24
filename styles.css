@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
+
+/* Basic Reset & Body Styles */
+body {
+    margin: 0;
+    /* OLD: font-family: 'Jost', sans-serif; */
+    /* NEW: Set font to DM Sans */
+    font-family: 'DM Sans', sans-serif;
+    background-color: #FFFFFF; /* White background */
+    color: #000000; /* Black text */
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures footer sticks to bottom if content is short */
+}
+
+/* The rest of your CSS remains exactly the same as it's general styling */
+
+/* Header */
+header {
+    text-align: center;
+    padding: 2em 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    width: 60px; /* Adjust size as needed for your logo */
+    height: auto;
+    margin-right: 10px;
+}
+
+.logo h1 {
+    font-size: 2.5em;
+    margin: 0;
+    letter-spacing: -1px; /* Tweak for minimalist feel */
+}
+
+/* Main Content Area */
+main {
+    flex-grow: 1; /* Allows main content to expand and push footer down */
+    max-width: 960px; /* Limit content width for readability */
+    margin: 0 auto; /* Center the content */
+    padding: 20px;
+    text-align: center; /* Center section content */
+}
+
+/* Hero Section */
+.hero {
+    padding: 4em 0;
+}
+
+.hero h2 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+    letter-spacing: -1.5px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    max-width: 600px;
+    margin: 0 auto 2em auto;
+}
+
+/* Buttons */
+.button {
+    display: inline-block;
+    padding: 1em 2em;
+    border: 2px solid #000000;
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.button:hover {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+.button.primary {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+.button.primary:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+
+/* Features Section */
+.features {
+    padding: 3em 0;
+    display: flex; /* Use flexbox for feature items */
+    justify-content: space-around;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    gap: 20px; /* Space between feature items */
+}
+
+.feature-item {
+    flex: 1; /* Allows items to grow/shrink */
+    min-width: 280px; /* Minimum width before wrapping */
+    padding: 1.5em;
+    border: 1px solid #E0E0E0; /* Subtle border */
+    text-align: center;
+}
+
+.feature-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+/* Call to Action Section */
+.call-to-action {
+    padding: 4em 0;
+}
+
+.call-to-action h2 {
+    font-size: 2.5em;
+    margin-bottom: 1em;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2em 0;
+    font-size: 0.8em;
+    color: #555555; /* Slightly lighter black for copyright */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .logo h1 {
+        font-size: 2em;
+    }
+
+    .hero h2 {
+        font-size: 2.2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .features {
+        flex-direction: column; /* Stack features vertically on small screens */
+    }
+
+    .feature-item {
+        min-width: unset; /* Remove min-width when stacked */
+        width: 100%; /* Take full width */
+    }
+
+    .call-to-action h2 {
+        font-size: 2em;
+    }
+}
