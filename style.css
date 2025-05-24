@@ -1,26 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
 
-
-/* Basic Reset & Body Styles */
 body {
     margin: 0;
-    /* OLD: font-family: 'Jost', sans-serif; */
-    /* NEW: Set font to DM Sans */
     font-family: 'DM Sans', sans-serif;
-    background-color: #FFFFFF; /* White background */
-    color: #000000; /* Black text */
+    background-color: #FFFFFF;
+    color: #000000;
     line-height: 1.6;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensures footer sticks to bottom if content is short */
+    min-height: 100vh;
 }
-
-/* The rest of your CSS remains exactly the same as it's general styling */
 
 /* Header */
 header {
     text-align: center;
     padding: 2em 0;
+    background-color: #f7f7f7;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .logo {
@@ -30,27 +26,43 @@ header {
 }
 
 .logo img {
-    width: 60px; /* Adjust size as needed for your logo */
+    width: 60px;
     height: auto;
     margin-right: 10px;
 }
 
-.logo h1 {
+.typing-title {
     font-size: 2.5em;
     margin: 0;
-    letter-spacing: -1px; /* Tweak for minimalist feel */
+    letter-spacing: -1px;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 4ch;
+    animation: typing 1.5s steps(4), blink 0.75s step-end infinite;
+    border-right: 2px solid #000;
 }
 
-/* Main Content Area */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 4ch }
+}
+
+@keyframes blink {
+    0%, 100% { border-color: transparent }
+    50% { border-color: black }
+}
+
+/* Main Layout */
 main {
-    flex-grow: 1; /* Allows main content to expand and push footer down */
-    max-width: 960px; /* Limit content width for readability */
-    margin: 0 auto; /* Center the content */
-    padding: 20px;
-    text-align: center; /* Center section content */
+    flex-grow: 1;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
 }
 
-/* Hero Section */
+/* Hero */
 .hero {
     padding: 4em 0;
 }
@@ -72,16 +84,20 @@ main {
     display: inline-block;
     padding: 1em 2em;
     border: 2px solid #000000;
+    background: transparent;
     color: #000000;
     text-decoration: none;
     font-weight: bold;
     text-transform: uppercase;
-    transition: background-color 0.3s, color 0.3s;
+    transition: all 0.3s ease;
+    border-radius: 8px;
 }
 
 .button:hover {
     background-color: #000000;
     color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .button.primary {
@@ -94,22 +110,30 @@ main {
     color: #000000;
 }
 
-
-/* Features Section */
+/* Features */
 .features {
     padding: 3em 0;
-    display: flex; /* Use flexbox for feature items */
+    display: flex;
     justify-content: space-around;
-    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
-    gap: 20px; /* Space between feature items */
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
 .feature-item {
-    flex: 1; /* Allows items to grow/shrink */
-    min-width: 280px; /* Minimum width before wrapping */
-    padding: 1.5em;
-    border: 1px solid #E0E0E0; /* Subtle border */
-    text-align: center;
+    flex: 1;
+    min-width: 280px;
+    max-width: 300px;
+    padding: 2em;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    background-color: #FAFAFA;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 .feature-item h3 {
@@ -117,7 +141,7 @@ main {
     margin-bottom: 0.5em;
 }
 
-/* Call to Action Section */
+/* Call to Action */
 .call-to-action {
     padding: 4em 0;
 }
@@ -132,10 +156,10 @@ footer {
     text-align: center;
     padding: 2em 0;
     font-size: 0.8em;
-    color: #555555; /* Slightly lighter black for copyright */
+    color: #555555;
 }
 
-/* Responsive adjustments */
+/* Responsive */
 @media (max-width: 768px) {
     .logo h1 {
         font-size: 2em;
@@ -150,12 +174,11 @@ footer {
     }
 
     .features {
-        flex-direction: column; /* Stack features vertically on small screens */
+        flex-direction: column;
     }
 
     .feature-item {
-        min-width: unset; /* Remove min-width when stacked */
-        width: 100%; /* Take full width */
+        width: 100%;
     }
 
     .call-to-action h2 {
