@@ -16,7 +16,7 @@ header {
   text-align: center;
   padding: 2em 0;
   background-color: #f7f7f7;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .logo {
@@ -44,13 +44,22 @@ header {
 }
 
 @keyframes typing {
-  from { width: 0 }
-  to { width: 3ch }
+  from {
+    width: 0;
+  }
+  to {
+    width: 3ch;
+  }
 }
 
 @keyframes blink {
-  0%, 100% { border-color: transparent }
-  50% { border-color: black }
+  0%,
+  100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: black;
+  }
 }
 
 /* Hero */
@@ -58,22 +67,41 @@ header {
   padding: 4em 1em;
 }
 
+.centered-text {
+  display: flex;
+  justify-content: center;
+}
+
 .looping-type {
-  display: inline-block;
+  display: block;
+  margin: 0 auto;
   font-size: 2em;
   font-weight: 700;
   white-space: nowrap;
   overflow: hidden;
+  text-align: center;
+  width: 0;
   border-right: 2px solid black;
   animation: type-loop 6s steps(45, end) infinite, blink 0.75s step-end infinite;
 }
 
-/* Typing + fade-out + reset loop */
 @keyframes type-loop {
-  0% { width: 0; opacity: 1; }
-  60% { width: 45ch; opacity: 1; }
-  75% { width: 45ch; opacity: 0; }
-  100% { width: 0; opacity: 0; }
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+  60% {
+    width: 45ch;
+    opacity: 1;
+  }
+  75% {
+    width: 45ch;
+    opacity: 0;
+  }
+  100% {
+    width: 0;
+    opacity: 0;
+  }
 }
 
 .hero p {
@@ -131,13 +159,13 @@ header {
   border: 1px solid #E0E0E0;
   border-radius: 12px;
   background-color: #FAFAFA;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .feature-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .feature-item h3 {
