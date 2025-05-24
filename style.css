@@ -23,37 +23,35 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 0 1em;
 }
 
 .logo img {
     width: 60px;
     height: auto;
-    margin-right: 10px;
 }
 
 .typing-title {
     font-size: 2.5em;
-    margin: 0 auto;
+    margin: 0;
     font-weight: 700;
-    width: 0;
     white-space: nowrap;
     overflow: hidden;
     border-right: 2px solid black;
     animation: typing 1.5s steps(3, end) forwards, blink 0.75s step-end infinite;
 }
 
-/* Typing animation reveals characters */
 @keyframes typing {
     from { width: 0 }
-    to { width: 3ch } /* Adjust for longer text */
+    to { width: 3ch }
 }
 
-/* Cursor blink animation */
 @keyframes blink {
     0%, 100% { border-color: transparent; }
     50% { border-color: black; }
 }
-
 
 /* Main Layout */
 main {
@@ -66,17 +64,17 @@ main {
 
 /* Hero */
 .hero {
-    padding: 4em 0;
+    padding: 4em 1em;
 }
 
 .hero h2 {
-    font-size: 3em;
+    font-size: 2.5em;
     margin-bottom: 0.5em;
-    letter-spacing: -1.5px;
+    letter-spacing: -1px;
 }
 
 .hero p {
-    font-size: 1.2em;
+    font-size: 1.1em;
     max-width: 600px;
     margin: 0 auto 2em auto;
 }
@@ -93,6 +91,7 @@ main {
     text-transform: uppercase;
     transition: all 0.3s ease;
     border-radius: 8px;
+    font-size: 0.9em;
 }
 
 .button:hover {
@@ -114,16 +113,16 @@ main {
 
 /* Features */
 .features {
-    padding: 3em 0;
+    padding: 3em 1em;
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
-    gap: 30px;
+    justify-content: center;
+    gap: 20px;
 }
 
 .feature-item {
     flex: 1;
-    min-width: 280px;
+    min-width: 250px;
     max-width: 300px;
     padding: 2em;
     border: 1px solid #E0E0E0;
@@ -139,51 +138,89 @@ main {
 }
 
 .feature-item h3 {
-    font-size: 1.5em;
+    font-size: 1.4em;
     margin-bottom: 0.5em;
 }
 
 /* Call to Action */
 .call-to-action {
-    padding: 4em 0;
+    padding: 4em 1em;
 }
 
 .call-to-action h2 {
-    font-size: 2.5em;
+    font-size: 2.2em;
     margin-bottom: 1em;
 }
 
 /* Footer */
 footer {
     text-align: center;
-    padding: 2em 0;
+    padding: 2em 1em;
     font-size: 0.8em;
     color: #555555;
 }
 
-/* Responsive */
+/* --- Responsive Breakpoints --- */
+
 @media (max-width: 768px) {
-    .logo h1 {
+    .logo {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .typing-title {
         font-size: 2em;
     }
 
     .hero h2 {
-        font-size: 2.2em;
+        font-size: 2em;
     }
 
     .hero p {
         font-size: 1em;
     }
 
+    .call-to-action h2 {
+        font-size: 1.8em;
+    }
+
     .features {
         flex-direction: column;
+        align-items: center;
     }
 
     .feature-item {
-        width: 100%;
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .typing-title {
+        font-size: 1.7em;
+    }
+
+    .hero h2 {
+        font-size: 1.6em;
+    }
+
+    .hero p {
+        font-size: 0.95em;
+    }
+
+    .button {
+        padding: 0.8em 1.5em;
+        font-size: 0.85em;
+    }
+
+    .feature-item {
+        padding: 1.5em;
+    }
+
+    .feature-item h3 {
+        font-size: 1.2em;
     }
 
     .call-to-action h2 {
-        font-size: 2em;
+        font-size: 1.6em;
     }
 }
