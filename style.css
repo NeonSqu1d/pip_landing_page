@@ -35,19 +35,21 @@ header {
     font-size: 2.5em;
     margin: 0;
     letter-spacing: -1px;
-    position: relative;
-    overflow: hidden;
     white-space: nowrap;
-    width: 4ch;
-    animation: typing 1.5s steps(4), blink 0.75s step-end infinite;
-    border-right: 2px solid #000;
+    overflow: hidden;
+    border-right: 2px solid black;
+    width: fit-content;
+    margin: 0 auto;
+    animation: typing 1.5s steps(3, end), blink 0.75s step-end infinite;
 }
 
+/* Typing effect keyframes */
 @keyframes typing {
     from { width: 0 }
-    to { width: 4ch }
+    to { width: 3ch } /* "Pip" = 3 characters */
 }
 
+/* Blinking cursor effect */
 @keyframes blink {
     0%, 100% { border-color: transparent }
     50% { border-color: black }
