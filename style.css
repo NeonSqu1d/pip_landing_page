@@ -9,11 +9,11 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  text-align: center;
 }
 
 /* Header */
 header {
-  text-align: center;
   padding: 2em 0;
   background-color: #f7f7f7;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -70,19 +70,22 @@ header {
 .centered-text {
   display: flex;
   justify-content: center;
+  padding: 0 1em;
 }
 
 .looping-type {
-  display: block;
-  margin: 0 auto;
+  display: inline-block;
   font-size: 2em;
   font-weight: 700;
-  white-space: nowrap;
   overflow: hidden;
   text-align: center;
   width: 0;
+  max-width: 100%;
   border-right: 2px solid black;
-  animation: type-loop 6s steps(45, end) infinite, blink 0.75s step-end infinite;
+  animation: type-loop 6s steps(50, end) infinite, blink 0.75s step-end infinite;
+  white-space: normal;
+  line-height: 1.3;
+  margin: 0;
 }
 
 @keyframes type-loop {
@@ -91,11 +94,11 @@ header {
     opacity: 1;
   }
   60% {
-    width: 45ch;
+    width: 100%;
     opacity: 1;
   }
   75% {
-    width: 45ch;
+    width: 100%;
     opacity: 0;
   }
   100% {
@@ -108,6 +111,12 @@ header {
   font-size: 1.1em;
   max-width: 600px;
   margin: 1.5em auto 2em auto;
+}
+
+/* Hero button centering */
+.hero-button {
+  text-align: center;
+  margin-top: 1.5em;
 }
 
 /* Buttons */
