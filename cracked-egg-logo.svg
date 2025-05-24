@@ -1,7 +1,7 @@
-<!-- assets/egg.svg -->
 <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-  <!-- Egg shape -->
-  <path d="M32 2C21 2 10 20 10 34s9.5 28 22 28 22-14 22-28S43 2 32 2z" fill="#ffffff" stroke="#999" stroke-width="2"/>
-  <!-- Crack -->
-  <path d="M26 24l4 4 4-6 4 8" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Egg shape with white fill and black outline -->
+  <path d="M32 2C21 2 10 20 10 34s9.5 28 22 28 22-14 22-28S43 2 32 2z" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  
+  <!-- Crack line in black -->
+  <path d="M26 24l4 4 4-6 4 8" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
