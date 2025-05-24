@@ -115,8 +115,11 @@ header {
 
 /* Hero button centering */
 .hero-button {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 1.5em;
+  width: 100%;
 }
 
 /* Buttons */
