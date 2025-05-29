@@ -33,15 +33,12 @@ header {
   height: auto;
 }
 
-.typing-title {
+.static-title {
   font-size: 2.5em;
   margin: 0;
   font-weight: 700;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 2px solid black;
-  animation: typing 1.5s steps(3, end) forwards, blink 0.75s step-end infinite;
 }
+
 
 @keyframes typing {
   from {
