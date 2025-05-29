@@ -39,35 +39,6 @@ header {
   font-weight: 700;
 }
 
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 3ch;
-  }
-}
-
-@keyframes typewriter {
-  0%   { width: 0; }
-  85%  { width: 46ch; }  /* Finish typing at 85% */
-  100% { width: 0; }     /* Reset at end of delay */
-}
-
-/* Cursor blink */
-@keyframes blink {
-  0%, 100% { border-color: transparent; }
-  50%      { border-color: black; }
-}
-
-/* Hide + reset effect */
-@keyframes hide-text {
-  0%   { opacity: 1; }
-  10%  { opacity: 0; }
-  100% { opacity: 0; }
-}
-
 /* Hero */
 .hero {
   padding: 4em 1em;
@@ -80,46 +51,17 @@ header {
 }
 
 .looping-type-wrapper {
-  height: 2.8em; /* Lock height to prevent layout shift */
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  padding-bottom: 0.5em;
 }
 
 .looping-type {
   font-size: 2em;
   font-weight: 700;
   font-family: 'DM Sans', sans-serif;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 2px solid black;
-  width: 0;
-
-  animation: 
-    typewriter 7s steps(46, end) infinite, 
-    blink 0.75s step-end infinite;
-}
-
-
-
-@keyframes type-loop {
-  0% {
-    width: 0;
-    opacity: 1;
-  }
-  60% {
-    width: 100%;
-    opacity: 1;
-  }
-  75% {
-    width: 100%;
-    opacity: 0;
-  }
-  100% {
-    width: 0;
-    opacity: 0;
-  }
+  margin: 0;
 }
 
 .hero p {
@@ -128,7 +70,7 @@ header {
   margin: 1.5em auto 2em auto;
 }
 
-/* Hero button centering */
+/* Hero button */
 .hero-button {
   display: flex;
   justify-content: center;
@@ -225,7 +167,7 @@ footer {
     gap: 8px;
   }
 
-  .typing-title {
+  .static-title {
     font-size: 2em;
   }
 
@@ -252,7 +194,7 @@ footer {
 }
 
 @media (max-width: 480px) {
-  .typing-title {
+  .static-title {
     font-size: 1.7em;
   }
 
