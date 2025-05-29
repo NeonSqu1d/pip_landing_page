@@ -56,7 +56,14 @@ header {
 
 @keyframes blink {
   0%, 100% { border-color: transparent; }
-  50% { border-color: black; }
+  50%      { border-color: black; }
+}
+
+/* Hide + reset effect */
+@keyframes hide-text {
+  0%   { opacity: 1; }
+  10%  { opacity: 0; }
+  100% { opacity: 0; }
 }
 
 /* Hero */
@@ -70,24 +77,32 @@ header {
   padding: 0 1em;
 }
 
-.looping-type {
-  font-size: 2em;
-  font-weight: 700;
-  font-family: 'DM Sans', sans-serif;
-  white-space: nowrap;       /* ✅ Forces one-line typing */
-  overflow: hidden;
-  border-right: 2px solid black;
-  width: 0;
-  animation: typewriter 4s steps(46) 1s infinite, blink 0.75s step-end infinite;
-}
-
 .looping-type-wrapper {
-  height: 2.8em; /* Adjust to fit one line of heading text */
+  height: 2.8em; /* Prevents layout shift */
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+.looping-type {
+  font-size: 2em;
+  font-weight: 700;
+  font-family: 'DM Sans', sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid black;
+  width: 0;
+  animation:
+    typewriter 4s steps(46) 0s forwards,
+    blink 0.75s step-end 4s infinite,
+    hide-text 3s linear 6s infinite;
+  animation-delay:
+    0s,                /* start typing immediately */
+    4s,                /* blink starts after typing finishes */
+    7s;                /* hide starts after typing + 3s of pause */
+}
+
 
 
 @keyframes type-loop {
