@@ -49,14 +49,14 @@ header {
   }
 }
 
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 46ch; } /* Number of characters in the sentence */
+}
+
 @keyframes blink {
-  0%,
-  100% {
-    border-color: transparent;
-  }
-  50% {
-    border-color: black;
-  }
+  0%, 100% { border-color: transparent; }
+  50% { border-color: black; }
 }
 
 /* Hero */
@@ -71,27 +71,22 @@ header {
 }
 
 .looping-type {
-  display: inline-block;
   font-size: 2em;
   font-weight: 700;
+  font-family: 'DM Sans', sans-serif;
+  white-space: nowrap;       /* ✅ Forces one-line typing */
   overflow: hidden;
-  text-align: center;
-  width: 0;
-  max-width: 100%;
   border-right: 2px solid black;
-  animation: type-loop 6s steps(50, end) infinite, blink 0.75s step-end infinite;
-  white-space: normal;
-  line-height: 1.3;
-  margin: 0 auto;
+  width: 0;
+  animation: typewriter 4s steps(46) 1s infinite, blink 0.75s step-end infinite;
 }
 
 .looping-type-wrapper {
-  height: 8em; /* Adjust based on font-size and line-height */
+  height: 2.8em; /* Adjust to fit one line of heading text */
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
-  position: relative;
 }
 
 
