@@ -86,7 +86,7 @@ header {
 }
 
 .looping-type-wrapper {
-  height: 3em; /* Adjust based on font-size and line-height */
+  height: 8em; /* Adjust based on font-size and line-height */
   display: flex;
   justify-content: center;
   align-items: center;
