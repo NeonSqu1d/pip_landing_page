@@ -2,7 +2,7 @@
 
 This is the codebase for the **Pip marketing landing page** — a minimalist, responsive site built to introduce and promote **Pip**, a microblogging platform for honest, ephemeral expression.
 
-> ✅ Currently deployed at: [https://your-username.github.io/pip_landing_page](https://your-username.github.io/pip_landing_page)
+> ✅ Currently deployed at: https://neonsqu1d.github.io/pip_landing_page/
 
 ---
 
