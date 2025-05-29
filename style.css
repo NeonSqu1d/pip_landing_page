@@ -50,10 +50,12 @@ header {
 }
 
 @keyframes typewriter {
-  from { width: 0; }
-  to { width: 46ch; } /* Number of characters in the sentence */
+  0%   { width: 0; }
+  85%  { width: 46ch; }  /* Finish typing at 85% */
+  100% { width: 0; }     /* Reset at end of delay */
 }
 
+/* Cursor blink */
 @keyframes blink {
   0%, 100% { border-color: transparent; }
   50%      { border-color: black; }
@@ -78,11 +80,11 @@ header {
 }
 
 .looping-type-wrapper {
-  height: 2.8em; /* Prevents layout shift */
-  overflow: hidden;
+  height: 2.8em; /* Lock height to prevent layout shift */
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .looping-type {
@@ -93,14 +95,10 @@ header {
   overflow: hidden;
   border-right: 2px solid black;
   width: 0;
-  animation:
-    typewriter 4s steps(46) 0s forwards,
-    blink 0.75s step-end 4s infinite,
-    hide-text 3s linear 6s infinite;
-  animation-delay:
-    0s,                /* start typing immediately */
-    4s,                /* blink starts after typing finishes */
-    7s;                /* hide starts after typing + 3s of pause */
+
+  animation: 
+    typewriter 7s steps(46, end) infinite, 
+    blink 0.75s step-end infinite;
 }
 
 
